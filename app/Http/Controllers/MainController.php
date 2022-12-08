@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\AdminProducts;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MainController extends Controller
 {
+
+    public function Logout()
+    {
+        Auth::logout();
+        return Redirect()->route('login');
+    }
+
     public function HomePage()
     {
         return view('pages.home');
@@ -38,5 +46,10 @@ class MainController extends Controller
     public function AboutPage()
     {
         return view('pages.about');
+    }
+
+    public function CartPage()
+    {
+        return view('pages.cart');
     }
 }

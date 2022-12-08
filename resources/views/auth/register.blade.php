@@ -7,25 +7,19 @@
             @csrf
             <input type="text" name="name" id="name" placeholder="Name *" required>
 
-            @error('name')
-            <span>
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
-
             <input type="email" name="email" id="email" placeholder="Email Address *" required>
-
-            @error('email')
-            <span>
-                <strong>{{ $message }}</strong>
-            </span>
-            @enderror
 
             <input type="password" name="password" id="password" placeholder="Password *" required>
 
-            <input type="password" name="password_confirmation" id="password-confirm" placeholder="Password *" required autocomplete="new-password">
+            <input type="password" name="password_confirmation" id="password-confirm" placeholder="Confirm Password *" required autocomplete="new-password">
 
-
+            @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+            @endif
 
             <input type="submit" value="Register" class="form__blackBtn">
             <h5>Already have an account?</h5>

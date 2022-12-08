@@ -3,8 +3,11 @@
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\ProductController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +26,7 @@ Route::get('/shop', [MainController::class, 'ShopPage'])->name('main.shop');
 Route::get('/product/{id}', [MainController::class, 'ProductPage'])->name('main.product');
 Route::get('/about', [MainController::class, 'AboutPage'])->name('main.about');
 Route::get('/contact', [MainController::class, 'ContactPage'])->name('main.contact');
+Route::get('/logout', [MainController::class, 'Logout'])->name('user.logout');
 
 Auth::routes();
 
@@ -34,6 +38,10 @@ All Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
 
     Route::get('/dashboard', [AdminController::class, 'index'])->name('user.dashboard');
+    Route::post('/addToCart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
+    Route::get('/cart', [MainController::class, 'CartPage'])->name('user.cart');
+    Route::get('update-cart-product/{id}', [ProductController::class, 'updateCartProduct'])->name('update.cart.product');
+    Route::get('remove-from-cart/{id}', [ProductController::class, 'removeCartProduct'])->name('remove.from.cart');
 });
 
 /*------------------------------------------
@@ -46,7 +54,7 @@ Route::middleware(['auth', 'user-access:super-admin'])->group(function () {
     Route::get('/admin/home', [AdminController::class, 'superAdminHome'])->name('dashboard');
 
     // Admin Login 
-    Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
+    // Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.login');
     Route::get('/admin/logout', [AdminController::class, 'Logout'])->name('admin.logout');
 
     // Admin Categories

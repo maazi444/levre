@@ -1,23 +1,18 @@
-@extends('layouts.app')
+@extends('main_master')
+@section('main')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                    <div class="alert alert-success" role="alert">
-                        {{ session('status') }}
-                    </div>
-                    @endif
-
-                    You are a User.
-                </div>
-            </div>
-        </div>
+<section class="userdb__wrapper">
+    <div class="userdb__navsection">
+        <ul class="userdb__navmenu">
+            <li class="userdb__navlink"><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
+            <li class="userdb__navlink"><a href="">Orders</a></li>
+            <li class="userdb__navlink"><a href="">Account details</a></li>
+            <li class="userdb__navlink"><a href="{{ route('logout') }}">Logout</a></li>
+        </ul>
     </div>
-</div>
+    <div class="userdb__pagesection">
+        @yield('user_dashboard')
+    </div>
+</section>
+
 @endsection

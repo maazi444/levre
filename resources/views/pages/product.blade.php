@@ -19,24 +19,29 @@
                 <p class="medium-paragraph">Price: ${{ $product->price }}</p>
                 <p class="description-paragraph prod__desc">{{ $product->description }}</p>
                 <div class="prod__cartRow">
+                <form action="{{ route('add.to.cart', $product->prodid) }}" method="POST">
+                    @csrf
                     <!-- Product Counter Start -->
                     <div class="product-count">
-                        <button class="button-count" id="minusBtn">-</button>
+                        <span class="button-count" id="minusBtn">-</span>
                         <input type="text" readonly class="number-product" id="prodNum" name="prod_quantity" value="1">
-                        <button class="button-count" id="plusBtn">+</button>
+                        <span class="button-count" id="plusBtn">+</span>
                     </div>
                     <!-- Product Counter End -->
-
+                    <input type="hidden" name="prodid" id="prodid" value="$product->prodid">
                     <!-- Product Add to Cart Start -->
-                    <a class="prod__addCartBtn">Add to Cart</a>
+                    <input class="prod__addCartBtn" type="submit" value="Add to Cart">
                     <!-- Product Add to Cart End -->
+                </form>    
+                
                 </div>
+                <!-- Added to Cart Message -->
+                @if(session('success'))
+                <div class="success-message">
+                    {{ session('success') }}
+                </div>
+                @endif
 
-                <!-- Wishlist Btn Start -->
-                <a class="product__wishlistBtn">
-                    <span><img src="{{ asset('frontend/img/heart-icon.svg') }}" alt="Levre Wishlist" /> Add to Wishlist</span>
-                </a>
-                <!-- Wishlist Btn End -->
                 <span class="product__categoryText">Category: {{ $product['product_category']['name'] }}</span>
                 <span class="product__prodidText">SKU: {{ $product->prodid }}</span>
                 <span class="product__prodidText product__noteText">* Note: All products are delievered in 7 business days</span>
@@ -63,27 +68,6 @@
         </article>
     </div>
 </section>
-
-<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var splide = new Splide(".splide", {
-            perPage: 3,
-            breakpoints: {
-                1024: {
-                    perPage: 2,
-                },
-                768: {
-                    perPage: 1,
-                },
-            },
-            rewind: true,
-            pagination: false,
-        });
-        splide.mount();
-    });
-</script>
 <script>
     $(function() {
         var num;
@@ -119,6 +103,25 @@
                 $('#plusBtn').prop('disabled', true);
             }
         });
+    });
+</script>
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var splide = new Splide(".splide", {
+            perPage: 3,
+            breakpoints: {
+                1024: {
+                    perPage: 2,
+                },
+                768: {
+                    perPage: 1,
+                },
+            },
+            rewind: true,
+            pagination: false,
+        });
+        splide.mount();
     });
 </script>
 @endsection

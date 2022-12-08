@@ -11,12 +11,11 @@
             <a class="header__linkLtr" href="{{ route('main.contact') }}">Contact</a>
         </div>
         <div class="header__actions">
-            <a class="header__wishlist" href="#"><img src="{{ asset('frontend/img/heart-icon.svg') }}" alt="Levre Wishlist" /></a>
+            <!-- <a class="header__wishlist" href="#"><img src="{{ asset('frontend/img/heart-icon.svg') }}" alt="Levre Wishlist" /></a> -->
             <a class="header__profile" href="{{ route('login') }}"><img src="{{ asset('frontend/img/profile.svg') }}" alt="Levre User" /></a>
-            <button class="header__cartBtn">
+            <a class="header__cartBtn" href="{{ route('user.cart') }}">
                 <img src="{{ asset('frontend/img/cart-icon.svg') }}" alt="Levre Navigation" />
-                <span class="cart-item-counter">0</span>
-            </button>
+            </a>
             <button class="header__mobileBtn">
                 <img src="{{ asset('frontend/img/bars.svg') }}" alt="Levre Navigation" />
             </button>
@@ -30,7 +29,7 @@
             <li><a href="{{ route('main.about') }}">About</a></li>
             <li><a href="{{ route('main.contact') }}">Contact</a></li>
             <li>
-                <a class="header__wishlist-mobile" href="#"><img src="{{ asset('frontend/img/heart-icon.svg') }}" alt="Levre Wishlist" /></a>
+                <!-- <a class="header__wishlist-mobile" href="#"><img src="{{ asset('frontend/img/heart-icon.svg') }}" alt="Levre Wishlist" /></a> -->
                 <a class="header__profile-mobile" href="{{ route('login') }}"><img src="{{ asset('frontend/img/profile.svg') }}" alt="Levre User" /></a>
             </li>
         </ul>
