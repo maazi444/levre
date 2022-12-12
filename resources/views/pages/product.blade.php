@@ -19,21 +19,21 @@
                 <p class="medium-paragraph">Price: ${{ $product->price }}</p>
                 <p class="description-paragraph prod__desc">{{ $product->description }}</p>
                 <div class="prod__cartRow">
-                <form action="{{ route('add.to.cart', $product->prodid) }}" method="POST">
-                    @csrf
-                    <!-- Product Counter Start -->
-                    <div class="product-count">
-                        <span class="button-count" id="minusBtn">-</span>
-                        <input type="text" readonly class="number-product" id="prodNum" name="prod_quantity" value="1">
-                        <span class="button-count" id="plusBtn">+</span>
-                    </div>
-                    <!-- Product Counter End -->
-                    <input type="hidden" name="prodid" id="prodid" value="$product->prodid">
-                    <!-- Product Add to Cart Start -->
-                    <input class="prod__addCartBtn" type="submit" value="Add to Cart">
-                    <!-- Product Add to Cart End -->
-                </form>    
-                
+                    <form action="{{ route('add.to.cart', $product->prodid) }}" method="POST">
+                        @csrf
+                        <!-- Product Counter Start -->
+                        <div class="product-count">
+                            <span class="button-count" id="minusBtn">-</span>
+                            <input type="text" readonly class="number-product" id="prodNum" name="prod_quantity" value="1">
+                            <span class="button-count" id="plusBtn">+</span>
+                        </div>
+                        <!-- Product Counter End -->
+                        <input type="hidden" name="prodid" id="prodid" value="$product->prodid">
+                        <!-- Product Add to Cart Start -->
+                        <input class="prod__addCartBtn" type="submit" value="Add to Cart">
+                        <!-- Product Add to Cart End -->
+                    </form>
+
                 </div>
                 <!-- Added to Cart Message -->
                 @if(session('success'))

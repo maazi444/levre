@@ -1,8 +1,6 @@
 @extends('main_master')
 @section('title', 'Cart - Levre')
 @section('main')
-
-
 <div class="cart__wrapper">
     <h1 class="cw__mainHeading">Shopping Bag</h1>
     <div class="cw__main">
@@ -25,7 +23,7 @@
                     @php $total += $details['price'] * $details['quantity'] @endphp
                     <div class="table-row cart__prodTable" data-id="{{ $id }}">
                         <div class="table-data"><img src="{{ asset('upload/images/'. $details['image']) }}" style="width: 100px;" alt="{{ $details['name'] }}"></div>
-                        <div class="table-data"><a href="{{ route('main.product',$details['prodid']) }}">{{ $details['name'] }}</a></div>
+                        <div class="table-data">{{ $details['name'] }}</div>
                         <div class="table-data">${{ $details['price'] }}</div>
                         <div class="table-data">{{ $details['quantity'] }}</div>
                         <div class="table-data">${{ $details['price'] * $details['quantity'] }}</div>
@@ -75,12 +73,16 @@
         <div class="cart__billSection">
             <div class="cart__billInner">
                 <h4>Bag totals</h4>
-                <p class="cart__address">Shipping to <span><strong>Rawalpindi, Pakistan</strong></span></p>
+                <p class="cart__address">Shipping to <span><strong>{{ $userAddress->address }}, {{ $userAddress->city }}, {{ $userAddress->country }}</strong></span></p>
                 <div class="cart__totalDiv">
                     <p><strong>Total</strong></p>
                     <p><strong>${{ $total }}</strong></p>
                 </div>
-                <button class="cart__checkoutBtn">Checkout</button>
+                <form action="{{ route('order.checkout') }}" method="POST">
+                    @csrf
+                    <input type="hidden" name="totalPrice" id="totalPrice" value="{{ $total }}">
+                    <input type="submit" class="cart__checkoutBtn" {{ ($total > 0)?'':'disabled' }} value="Checkout">
+                </form>
             </div>
         </div>
     </div>

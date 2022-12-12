@@ -38,10 +38,18 @@ All Normal Users Routes List
 Route::middleware(['auth', 'user-access:user'])->group(function () {
 
     Route::get('/dashboard', [AdminController::class, 'index'])->name('user.dashboard');
+    Route::get('/dashboard/orders', [MainController::class, 'UserOrderPage'])->name('user.orders');
+    Route::get('/dashboard/address', [MainController::class, 'UserAddressPage'])->name('user.address');
+    Route::get('/dashboard/address/add', [MainController::class, 'AddUserAddress'])->name('add.user.address');
+    Route::post('/dashboard/address/store', [MainController::class, 'StoreUserAddress'])->name('store.user.address');
+    Route::get('/dashboard/address/edit', [MainController::class, 'EditUserAddress'])->name('edit.user.address');
+    Route::post('/dashboard/address/update', [MainController::class, 'UpdateUserAddress'])->name('update.user.address');
     Route::post('/addToCart/{id}', [ProductController::class, 'addToCart'])->name('add.to.cart');
     Route::get('/cart', [MainController::class, 'CartPage'])->name('user.cart');
     Route::get('update-cart-product/{id}', [ProductController::class, 'updateCartProduct'])->name('update.cart.product');
     Route::get('remove-from-cart/{id}', [ProductController::class, 'removeCartProduct'])->name('remove.from.cart');
+    Route::post('/order-checkout', [ProductController::class, 'OrderCheckout'])->name('order.checkout');
+    Route::get('/order/success', [MainController::class, 'OrderSuccessPage'])->name('order.success');
 });
 
 /*------------------------------------------

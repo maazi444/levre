@@ -22,7 +22,7 @@
             </div>
 
             <!-- Product Description Start -->
-            <textarea class="category__nameInput" name="prod_desc" id="prod_desc" cols="30" rows="10" placeholder="Product description" required>Product description goes here...</textarea>
+            <textarea class="category__nameInput" name="prod_desc" id="prod_desc" cols="30" rows="10" placeholder="Product description" required></textarea>
             <!-- Product Description End -->
 
             <!-- Product Price & Quantity Start -->

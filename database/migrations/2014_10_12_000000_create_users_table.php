@@ -21,6 +21,10 @@ return new class extends Migration
             $table->string('password');
             $table->tinyInteger('type')->default(0);
             /* Users: 0=>User, 1=>Super Admin, 2=>Manager */
+            $table->string('address', 255)->nullable();
+            $table->string('zipcode', 10)->nullable();
+            $table->string('city', 255)->nullable();
+            $table->string('country', 255)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

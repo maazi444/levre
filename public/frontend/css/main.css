@@ -7,6 +7,10 @@
     color: #333;
 }
 
+table {
+    border-collapse: collapse;
+}
+
 .text-danger {
     color: red;
 }
@@ -1512,7 +1516,7 @@ header:hover {
 .userdb__wrapper {
     width: 100%;
     min-height: 80vh;
-    padding-top: 6em;
+    padding-top: 10em;
     display: flex;
 }
 
@@ -1543,7 +1547,7 @@ header:hover {
 
 .userdb__pagesection {
     padding: 0 7em 0 4em;
-    padding-top: 0.8rem;
+    width: 70vw;
 }
 
 .userdb__pagesection * {
@@ -1714,6 +1718,126 @@ header:hover {
 }
 
 /* Cart Page End */
+
+/* Orders Page Start */
+
+.orders__wrapper {
+    padding: 0 2em;
+}
+
+.orders__wrapper * {
+    font-size: 0.95em;
+}
+
+.orders__table {
+    width: 100%;
+    text-align: center;
+}
+
+.orders__table tr {
+    border-bottom: 1px solid #dbdbdb;
+    margin-top: 0.4em;
+}
+
+.orders__table th,
+.orders__table td {
+    padding: 0.8em 0;
+}
+
+.orders__viewBtn {
+    border: none;
+    padding: 0.6em 1em;
+    background: #ebe9eb;
+    cursor: pointer;
+}
+
+.orders__viewBtn:active {
+    transform: scale(0.95);
+}
+
+/* Orders Page End */
+
+/* Order Successful Page Start */
+
+.order_successful_wrapper {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.os__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.os__text {
+    text-align: center;
+}
+
+.os__cta {
+    margin-top: 2em;
+}
+
+.os__ctaBtn_trans {
+    font-size: 0.9em;
+    border: 2px solid #0c0c0c;
+    font-weight: 600;
+    padding: 0.8em;
+    margin: 0 0.5em;
+}
+
+.os__ctaBtn_trans:hover {
+    color: #fff;
+    background: #0c0c0c;
+    transition: 0.2s;
+}
+
+.os__ctaBtn_black {
+    color: #fff;
+    background: #0c0c0c;
+    font-size: 0.9em;
+    border: 2px solid #0c0c0c;
+    padding: 0.8em;
+    font-weight: 600;
+    margin: 0 0.5em;
+}
+
+.os__ctaBtn_black:hover {
+    color: #0c0c0c;
+    background: #fff;
+    transition: 0.2s;
+}
+
+/* Order Successful Page End */
+
+/* User Shipping Address Page Start */
+
+.dashboard__content_heading {
+    font-size: 1.4em;
+}
+
+.sa__btn {
+    display: inline-block;
+    margin-top: 1em;
+    background: #ebe9eb;
+    padding: 0.8em;
+    border: none;
+    cursor: pointer;
+}
+
+.sa__btn:active {
+    transform: scale(0.95);
+}
+
+.sa_field {
+    width: 30vw;
+    padding: 0.7em 0.8em;
+    margin: 0.5em 0.3em;
+}
+
+/* User Shipping Address Page End */
 
 /* ------ Responsive Media Queries Start ------ */
 
