@@ -80,6 +80,9 @@ Route::middleware(['auth', 'user-access:super-admin'])->group(function () {
     Route::get('/admin/products/edit/{id}', [AdminController::class, 'EditProduct'])->name('admin.edit.product');
     Route::post('/admin/products/update/{id}', [AdminController::class, 'UpdateProduct'])->name('admin.update.product');
     Route::get('/admin/products/delete/{id}', [AdminController::class, 'DeleteProduct'])->name('admin.delete.product');
+
+    // Admin Customers
+    Route::get('/admin/customers', [AdminController::class, 'ViewCustomers'])->name('admin.view.customers');
 });
 
 /*------------------------------------------

@@ -7,6 +7,7 @@ use App\Models\AdminProducts;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class AdminController extends Controller
 {
@@ -154,5 +155,12 @@ class AdminController extends Controller
         $data = AdminProducts::find($id);
         $data->delete();
         return redirect()->back();
+    }
+
+    public function ViewCustomers()
+    {
+        $data['allData'] = User::where('type', 0)->get();
+        // dd($data);
+        return view('pages.admincp.customers.view_customer', $data);
     }
 }

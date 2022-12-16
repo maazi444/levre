@@ -1515,7 +1515,7 @@ header:hover {
 
 .userdb__wrapper {
     width: 100%;
-    min-height: 80vh;
+    min-height: 100vh;
     padding-top: 10em;
     display: flex;
 }
@@ -1524,6 +1524,7 @@ header:hover {
     width: 30vw;
     display: flex;
     justify-content: center;
+    padding-top: 0.9em;
 }
 
 .userdb__navmenu {
