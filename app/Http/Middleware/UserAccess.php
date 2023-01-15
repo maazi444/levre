@@ -19,9 +19,13 @@ class UserAccess
     public function handle(Request $request, Closure $next, $userType)
     {
         if (auth()->user()->type == $userType) {
-            return $next($request);
+            if (auth()->user()->status == 0) {
+                return $next($request);
+            }
         }
-
+        if (auth()->user()->status == 1) {
+            return response()->json(['You have been blocked by the administrator.']);
+        }
         return response()->json(['You do not have permission to access for this page.']);
         /* return response()->view('errors.check-permission'); */
     }

@@ -12,10 +12,10 @@
         <!-- Featured Product Start -->
         <div class="cat__item">
             <div class="cat__itemInner">
-                <a href="#" class="cat__link"></a>
+                <a href="{{ route('main.category.view', 3) }}" class="cat__link"></a>
                 <div class="cat__details">
                     <div class="cat__innerDetails">
-                        <h1 class="medium-heading">Lotions</h1>
+                        <h1 class="medium-heading">Eyeliners</h1>
                         <div class="cat__viewBtn">
                             <span>View</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
                 <div class="cat__thumbnail">
-                    <img src="{{ asset('frontend/img/product28_large.webp') }}" class="cat__overlay" alt="">
+                    <img src="{{ asset('frontend/img/product_eyeliner.jpg') }}" class="cat__overlay" alt="">
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
         <!-- Featured Product Start -->
         <div class="cat__item">
             <div class="cat__itemInner">
-                <a href="#" class="cat__link"></a>
+                <a href="{{ route('main.category.view', 1) }}" class="cat__link"></a>
                 <div class="cat__details">
                     <div class="cat__innerDetails">
                         <h1 class="medium-heading">Lipsticks</h1>
@@ -57,10 +57,10 @@
         <!-- Featured Product Start -->
         <div class="cat__item">
             <div class="cat__itemInner">
-                <a href="#" class="cat__link"></a>
+                <a href="{{ route('main.category.view', 4) }}" class="cat__link"></a>
                 <div class="cat__details">
                     <div class="cat__innerDetails">
-                        <h1 class="medium-heading">Perfume</h1>
+                        <h1 class="medium-heading">Perfumes</h1>
                         <div class="cat__viewBtn">
                             <span>View</span>
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -79,7 +79,7 @@
         <!-- Featured Product Start -->
         <div class="cat__item">
             <div class="cat__itemInner">
-                <a href="#" class="cat__link"></a>
+                <a href="{{ route('main.category.view', 2) }}" class="cat__link"></a>
                 <div class="cat__details">
                     <div class="cat__innerDetails">
                         <h1 class="medium-heading">Foundations</h1>

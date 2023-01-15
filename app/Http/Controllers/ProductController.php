@@ -10,6 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth', 'verified']);
+    }
+
     public function addToCart(Request $request, $id)
     {
         // dd($request->prod_quantity);
@@ -45,13 +51,19 @@ class ProductController extends Controller
         $order_id = random_int(10000, 99999);
 
         $carts = session('cart');
-
+        $orderTotal = 0;
+        foreach ($carts as $cart) {
+            $totalProdPrice = $cart['price'] * $cart['quantity'];
+            $orderTotal += $totalProdPrice;
+        }
         foreach ($carts as $cart) {
             Orders::create([
                 'order_id' => $order_id,
                 'user_id' => Auth::user()->id,
                 'prod_id' => $cart['prodid'],
                 'prod_quantity' => $cart['quantity'],
+                'order_total' => $orderTotal,
+                'status' => 1,
                 'created_at' => Carbon::now(),
             ]);
         }

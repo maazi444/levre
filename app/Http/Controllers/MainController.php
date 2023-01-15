@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AdminCategories;
 use App\Models\AdminProducts;
 use App\Models\Orders;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class MainController extends Controller
 {
@@ -17,6 +19,11 @@ class MainController extends Controller
         return Redirect()->route('login');
     }
 
+    public function index()
+    {
+        return view('pages.usercp.dashboard');
+    }
+
     public function HomePage()
     {
         return view('pages.home');
@@ -25,6 +32,13 @@ class MainController extends Controller
     public function CategoriesPage()
     {
         return view('pages.categories');
+    }
+
+    public function CategoryView($id)
+    {
+        $categoryRecord = AdminCategories::where('id', $id)->first();
+        $data['product_records'] = AdminProducts::where('category', $categoryRecord->id)->get();
+        return view('pages.category_view', $data, compact('categoryRecord'));
     }
 
     public function ShopPage()
@@ -58,7 +72,7 @@ class MainController extends Controller
 
     public function UserOrderPage()
     {
-        $data['orderRecord'] = Orders::where('user_id', Auth::user()->id)->get()->groupBy('order_id');
+        $data['orderRecord'] = Orders::where('user_id', Auth::user()->id)->get()->sortByDesc('created_at')->groupBy('order_id');
         // dd($data['orderRecord']);
         return view('pages.usercp.order', $data);
     }
@@ -107,5 +121,56 @@ class MainController extends Controller
         $userAddress->country = $request->country;
         $userAddress->update();
         return redirect()->route('user.address');
+    }
+
+    public function OrderDetail($orderid)
+    {
+        $ordernum = $orderid;
+        $ordertotal = Orders::where('order_id', $orderid)->first();
+        $data['orderRecord'] = Orders::where('order_id', $orderid)->get();
+        return view('pages.usercp.view_order', $data, compact('ordernum', 'ordertotal'));
+    }
+
+    public function OrderConfirm($orderid)
+    {
+        $data['orderRecord'] = Orders::where('order_id', $orderid)->get();
+        for ($i = 0; $i < count($data['orderRecord']); $i++) {
+            $order = $data['orderRecord'][$i];
+            $order->status = 4;
+            $order->update();
+        }
+        return redirect()->back();
+    }
+
+    public function AccountDetail()
+    {
+        $data['allRecord'] = User::find(Auth()->user()->id);
+        return view('pages.usercp.userAccount.view_account', $data);
+    }
+
+    public function UpdateAccount(Request $request, $id)
+    {
+
+        if ($request->old_password) {
+            if (!Hash::check($request->old_password, auth()->user()->password)) {
+                return back()->with("error", "Old Password Doesn't match!");
+            }
+
+            if ($request->new_password != $request->new_password_confirmation) {
+                return back()->with("error", "Both Password Doesn't match!");
+            }
+
+            User::whereId($id)->update([
+                'name' => $request->user_name,
+                'password' => Hash::make($request->new_password)
+            ]);
+            return back()->with("status", "Password changed successfully!");
+        }
+
+        User::whereId($id)->update([
+            'name' => $request->user_name,
+        ]);
+
+        return back()->with("status", "Account details changed successfully!");
     }
 }

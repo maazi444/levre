@@ -7,7 +7,7 @@
             <li class="userdb__navlink"><a href="{{ route('user.dashboard') }}">Dashboard</a></li>
             <li class="userdb__navlink"><a href="{{ route('user.orders') }}">Orders</a></li>
             <li class="userdb__navlink"><a href="{{ route('user.address') }}">Shipping Address</a></li>
-            <li class="userdb__navlink"><a href="">Account details</a></li>
+            <li class="userdb__navlink"><a href="{{ route('user.account.detail') }}">Account details</a></li>
             <li class="userdb__navlink"><a href="{{ route('logout') }}">Logout</a></li>
         </ul>
     </div>

@@ -12,4 +12,9 @@ class AdminCategories extends Model
     {
         return $this->belongsTo(AdminCategoriesVisibility::class, "visibility", 'id');
     }
+
+    public function categoryProduct()
+    {
+        return $this->hasMany(AdminProducts::class, 'category');
+    }
 }

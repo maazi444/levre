@@ -6,7 +6,7 @@
         <h1 class="large-heading">Beauty products that really work.</h1>
         <p class="large-paragraph">Our formulations have proven efficacy, contain organic ingredients only and are 100% cruelty free.</p>
         <div class="hero__buttons">
-            <a class="hero__blackBtn">Skincare</a>
+            <a href="{{ route('main.category.view', 4) }}" class="hero__blackBtn">Perfumes</a>
             <a href="{{ route('main.shop') }}" class="hero__transBtn">Shop All</a>
         </div>
     </div>
@@ -22,10 +22,10 @@
             <!-- Featured Product Start -->
             <div class="homeCategory__item">
                 <div class="homeCategory__itemInner">
-                    <a href="#" class="homeCategory__link"></a>
+                    <a href="{{ route('main.category.view', 3) }}" class="homeCategory__link"></a>
                     <div class="homeCategory__details">
                         <div class="homeCategory__innerDetails">
-                            <h1 class="medium-heading">Lotions</h1>
+                            <h1 class="medium-heading">Eyeliners</h1>
                             <div class="homeCategory__viewBtn">
                                 <span>View</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -35,7 +35,7 @@
                         </div>
                     </div>
                     <div class="homeCategory__thumbnail">
-                        <img src="{{ asset('frontend/img/product28_large.webp') }}" class="homeCategory__overlay" alt="">
+                        <img src="{{ asset('frontend/img/product_eyeliner.jpg') }}" class="homeCategory__overlay" alt="">
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
             <!-- Featured Product Start -->
             <div class="homeCategory__item">
                 <div class="homeCategory__itemInner">
-                    <a href="#" class="homeCategory__link"></a>
+                    <a href="{{ route('main.category.view', 1) }}" class="homeCategory__link"></a>
                     <div class="homeCategory__details">
                         <div class="homeCategory__innerDetails">
                             <h1 class="medium-heading">Lipsticks</h1>
@@ -66,10 +66,10 @@
             <!-- Featured Product Start -->
             <div class="homeCategory__item">
                 <div class="homeCategory__itemInner">
-                    <a href="#" class="homeCategory__link"></a>
+                    <a href="{{ route('main.category.view', 4) }}" class="homeCategory__link"></a>
                     <div class="homeCategory__details">
                         <div class="homeCategory__innerDetails">
-                            <h1 class="medium-heading">Perfume</h1>
+                            <h1 class="medium-heading">Perfumes</h1>
                             <div class="homeCategory__viewBtn">
                                 <span>View</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -87,10 +87,10 @@
             <!-- Featured Product Start -->
             <div class="homeCategory__item">
                 <div class="homeCategory__itemInner">
-                    <a href="#" class="homeCategory__link"></a>
+                    <a href="{{ route('main.category.view', 2) }}" class="homeCategory__link"></a>
                     <div class="homeCategory__details">
                         <div class="homeCategory__innerDetails">
-                            <h1 class="medium-heading">Foundation</h1>
+                            <h1 class="medium-heading">Foundations</h1>
                             <div class="homeCategory__viewBtn">
                                 <span>View</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -115,7 +115,7 @@
 <section class="bestseller">
     <div class="bestseller__content">
         <h1 class="large-heading">Our bestsellers</h1>
-        <a class="hero__transBtn">Shop All</a>
+        <a href="{{ route('main.shop') }}" class="hero__transBtn">Shop All</a>
     </div>
     <div class="bestseller__slider">
         <section class="splide" role="group">
@@ -123,35 +123,35 @@
                 <ul class="splide__list">
                     <li class="splide__slide">
                         <div class="splide__slide__container">
-                            <a href="#">
-                                <img src="{{ asset('frontend/img/prod1.webp') }}" alt="">
+                            <a href="{{ route('main.product',2022120409081) }}">
+                                <img src="{{ asset('frontend/img/product_lipstick.webp') }}" alt="">
                             </a>
                         </div>
-                        <h4 class="bestseller__sliderHeading">Facial Balancing Gel</h4>
+                        <h4 class="bestseller__sliderHeading">Pack of 4-Red Lipsticks</h4>
                     </li>
                     <li class="splide__slide">
                         <div class="splide__slide__container">
-                            <a href="#">
-                                <img src="{{ asset('frontend/img/prod2.webp') }}" alt="">
+                            <a href="{{ route('main.product',2022120903032) }}">
+                                <img src="{{ asset('frontend/img/product_foundation.jpg') }}" alt="">
                             </a>
                         </div>
-                        <h4 class="bestseller__sliderHeading">Facial Balancing Gel</h4>
+                        <h4 class="bestseller__sliderHeading">Brown Skin Foundation</h4>
                     </li>
                     <li class="splide__slide">
                         <div class="splide__slide__container">
-                            <a href="#">
-                                <img src="{{ asset('frontend/img/prod3.webp') }}" alt="">
+                            <a href="{{ route('main.product',2022120903123) }}">
+                                <img src="{{ asset('frontend/img/product_eye.jpg') }}" alt="">
                             </a>
                         </div>
-                        <h4 class="bestseller__sliderHeading">Facial Balancing Gel</h4>
+                        <h4 class="bestseller__sliderHeading">Black Liquid Eyeliner</h4>
                     </li>
                     <li class="splide__slide">
                         <div class="splide__slide__container">
-                            <a href="#">
-                                <img src="{{ asset('frontend/img/prod4.webp') }}" alt="">
+                            <a href="{{ route('main.product',2022112703351) }}">
+                                <img src="{{ asset('frontend/img/product_lip.jpg') }}" alt="">
                             </a>
                         </div>
-                        <h4 class="bestseller__sliderHeading">Facial Balancing Gel</h4>
+                        <h4 class="bestseller__sliderHeading">Pink Shade Lipstick</h4>
                     </li>
                 </ul>
             </div>
@@ -164,7 +164,7 @@
         <div>
             <h1 class="large-heading">Our philosophy</h1>
             <p class="large-paragraph">All products we produce have proven efficacy. We test all product ranges and guarantee their quality.</p>
-            <a class="hero__transBtn">Learn More</a>
+            <a href="{{ route('main.about') }}" class="hero__transBtn">Learn More</a>
         </div>
     </div>
 </section>

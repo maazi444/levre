@@ -4,7 +4,7 @@
 <section class="prod__wrapper">
     <div class="prod__inner">
         <div class="prod__breadCrumb">
-            <span class="prod__breadCrumbItem"><a href="{{ route('main.shop') }}">Shop</a> / <a href="#">{{ $product['product_category']['name'] }}</a>/</span>
+            <span class="prod__breadCrumbItem"><a href="{{ route('main.shop') }}">Shop</a> / <a href="{{ route('main.category.view', $product->category) }}">{{ $product['product_category']['name'] }}</a>/</span>
         </div>
         <article class="prod__row">
             <!-- Product Image Column Start -->

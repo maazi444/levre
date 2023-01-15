@@ -12,7 +12,7 @@ table {
 }
 
 .text-danger {
-    color: red;
+    color: #db3737;
 }
 
 .slim-heading {
@@ -21,6 +21,16 @@ table {
 
 .success-message {
     color: #409b2e;
+}
+
+.BlackBtn {
+    display: inline-block;
+    border: none;
+    padding: 0.6em 1em;
+    font-weight: 600;
+    background: #0c0c0c;
+    color: #fff;
+    cursor: pointer;
 }
 
 /* Header Start */
@@ -1349,7 +1359,7 @@ header:hover {
 
 .about__content {
     width: 100%;
-    padding: 4em 10em;
+    padding: 4em 8vw;
 }
 
 .about__features {
@@ -1359,7 +1369,7 @@ header:hover {
 .features__details,
 .features__image {
     width: 50%;
-    padding: 3em 4em;
+    padding: 3vw 2vw;
 }
 
 .features__detailRow {
@@ -1387,15 +1397,15 @@ header:hover {
 
 .features__largeImage {
     position: absolute;
-    top: 50%;
-    left: 50%;
+    top: 25vw;
+    left: 24vw;
     transform: translate(-50%, -50%);
 }
 
 .features__smallImage {
     position: absolute;
-    top: 75%;
-    left: 25%;
+    top: 40vw;
+    left: 15vw;
     transform: translate(-75%, -70%);
 }
 
@@ -1407,7 +1417,7 @@ header:hover {
 .founder__image,
 .founder__text {
     width: 50%;
-    padding: 3em 4em;
+    padding: 3vw 4vw;
 }
 
 .founder__image img {
@@ -1482,14 +1492,14 @@ header:hover {
     width: 100%;
     display: flex;
     flex-direction: row;
-    padding: 2em 8em;
+    padding: 2vw 8vw;
     margin-top: 2em;
 }
 
 .contact__col1,
 .contact__col2 {
     width: 50%;
-    padding: 2em;
+    padding: 2vw;
 }
 
 .contact__col1 {
@@ -1732,7 +1742,7 @@ header:hover {
 
 .orders__table {
     width: 100%;
-    text-align: center;
+    text-align: left;
 }
 
 .orders__table tr {
@@ -1746,6 +1756,7 @@ header:hover {
 }
 
 .orders__viewBtn {
+    display: inline-block;
     border: none;
     padding: 0.6em 1em;
     background: #ebe9eb;
@@ -1756,7 +1767,41 @@ header:hover {
     transform: scale(0.95);
 }
 
+.order_confirmation_message {
+    color: #797979;
+}
+
 /* Orders Page End */
+
+/* Order Detail Start */
+
+.detail_confirm {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em;
+}
+
+.detail_confirm span {
+    color: #747474;
+    font-style: italic;
+}
+
+.detail_confirm_btn {
+    background: #0c0c0c;
+    border: none;
+    padding: 0.4em 1.5em;
+    color: #fff;
+    transition: 0.2s;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.detail_confirm_btn:hover {
+    background: #000;
+}
+
+/* Order Detail End */
 
 /* Order Successful Page Start */
 
@@ -1840,6 +1885,304 @@ header:hover {
 
 /* User Shipping Address Page End */
 
+/* Admin Change Role Page Start */
+
+.role__form_row label {
+    margin-left: 0.7em;
+}
+
+/* Admin Change Role Page End */
+
+/* Admin Orders Page Start */
+
+.action-menu-td {
+    position: relative;
+}
+
+.admin-order-action-icon svg {
+    height: 22px;
+    cursor: pointer;
+}
+
+.admin-order-action-icon {
+    background: none;
+    border: none;
+    padding: 0.4em;
+    border-radius: 5px;
+}
+
+.admin-order-action-icon:hover {
+    background: #eeeeee;
+    transition: 0.2s;
+}
+
+.admin-order-action-menu {
+    position: absolute;
+    right: 88%;
+    width: 130px;
+    background: #fff;
+    box-shadow: 2px 3px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.admin-order-action-menu {
+    display: none;
+    visibility: hidden;
+}
+
+.admin-order-action-menu ul {
+    list-style: none;
+}
+
+.admin-order-action-menu a {
+    display: block;
+    padding: 0.3em 0.8em;
+}
+
+.admin-order-action-menu a:hover {
+    background: #f1f1f1;
+}
+
+.admin-order-action-menu hr {
+    margin: 0;
+}
+
+.action-menu-delBtn a {
+    background: #f7f7f7;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.showActionMenu {
+    z-index: 10000;
+    display: block;
+    visibility: visible;
+}
+
+/* Admin Orders Page End */
+
+/* Admin Order Detail Page Start */
+
+.order_detail__toolbar {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.order_detail__toolbar h1 {
+    font-size: 2em;
+    font-weight: 500;
+}
+
+.order_detail__infobar {
+    padding: 5px 0;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.infobar__inner {
+    display: flex;
+}
+
+.infobar__inner p {
+    color: #858585;
+    font-size: 14px;
+    padding: 0 1.5em;
+    border-left: 1px solid #dbdbdb;
+}
+
+.order_detail__outer {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    column-gap: 2em;
+    margin-top: 2em;
+}
+
+.user_order_detail_section * {
+    font-size: 0.95em !important;
+}
+
+.order_detail__col {
+    padding-bottom: 1em;
+}
+
+.order_detail__border {
+    border: 1px solid #dbdbdb;
+}
+
+.order_detail__col h2 {
+    margin: 0;
+}
+
+.detail_mainHeading {
+    padding: 0.5em 1em;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.detail_mainHeading h2 {
+    font-weight: 500;
+}
+
+.detail__itemRow {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr;
+    padding: 5px 0;
+}
+
+.detail__tableHeader {
+    border-bottom: 1px solid #dbdbdb;
+}
+
+.detail__itemCol {
+    align-self: center;
+}
+
+.detail__itemImg {
+    justify-self: center;
+}
+
+.detail__itemTotal {
+    padding: 0 1em;
+    justify-self: end;
+}
+
+.detail_footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5em 1em;
+    border-top: 1px solid #dbdbdb;
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 1em;
+}
+
+.detail_footer * {
+    color: #858585;
+}
+
+.detail_action_btn {
+    background-color: #0c0c0c;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1em;
+    float: right;
+    user-select: none;
+}
+
+.detail_action_btn_disabled {
+    background-color: #888888;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 600;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    margin-right: 1em;
+    float: right;
+    user-select: none;
+}
+
+.detail_action_btn:hover {
+    background: #000;
+}
+
+.detail_action_btn:active {
+    transform: scale(0.95);
+}
+
+.order__info {
+    border: 1px solid #dbdbdb;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.order__info h3 {
+    font-weight: 500;
+}
+
+.order_customer p,
+.order_address p {
+    color: #858585;
+}
+
+.order_address {
+    margin-top: 1em;
+}
+
+/* Admin Order Detail Page End */
+
+/* Admin Order Status Page Start */
+
+.status_label {
+    display: inline-block;
+    width: 150px;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Admin Order Status Page End */
+
+/* User Account Detail Page Start */
+
+.detail__input {
+    width: 55%;
+    display: inline-block;
+    border: 1px solid #0c0c0c;
+    padding: 0.9em 0.8em;
+    margin: 0.7em 0;
+    font-size: 1.1em;
+}
+
+.detail__btn {
+    padding: 1em 2.5em;
+    color: #fff;
+    background: #0c0c0c;
+    width: fit-content;
+    cursor: pointer;
+}
+
+/* User Account Detail Page End */
+
+/* User Email Verfiy Page Start */
+
+.verify__wrapper {
+    width: 100%;
+    height: 80vh;
+    padding: 8em 1em 4em 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.verify__box {
+    margin-top: 2em;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    padding: 1em;
+    width: 40vw;
+    text-align: left;
+}
+
+.resent_text {
+    margin-top: 2em;
+}
+
+.verify__btn {
+    margin-top: 1em;
+    padding: 1em 1.2em;
+    color: #fff;
+    background: #0c0c0c;
+    cursor: pointer;
+}
+
+.verify__btn:hover {
+    background: #191512;
+}
+
+/* User Email Verfiy Page End */
+
 /* ------ Responsive Media Queries Start ------ */
 
 @media (max-width: 1024px) {
@@ -1869,6 +2212,20 @@ header:hover {
     .cat__col1,
     .cat__col2 {
         width: 80%;
+    }
+
+    .features__smallImage {
+        display: none;
+        visibility: hidden;
+    }
+
+    .cta__content h1 {
+        text-align: center;
+    }
+
+    .contact__wrapper {
+        display: flex;
+        flex-direction: column;
     }
 }
 
@@ -2036,6 +2393,50 @@ header:hover {
     .about__heroText {
         margin-top: 3em;
     }
+
+    .about__features {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .features__details,
+    .features__image {
+        width: 100%;
+        padding: 3vw 2vw;
+    }
+    .features__largeImage {
+        position: static;
+        transform: none;
+    }
+
+    .about__founder {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .founder__image,
+    .founder__text {
+        width: 100%;
+        padding: 3vw 4vw;
+    }
+
+    .cta__content {
+        width: 70vw;
+    }
+
+    .contact__wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 2vw;
+    }
+
+    .contact__col1,
+    .contact__col2 {
+        width: 100%;
+        padding: 2vw;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2079,6 +2480,10 @@ header:hover {
 
     .about__heroText {
         margin-top: 3em;
+    }
+
+    .features__largeImage img {
+        width: 250px !important;
     }
 }
 

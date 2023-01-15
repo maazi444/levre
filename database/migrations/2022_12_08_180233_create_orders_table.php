@@ -19,6 +19,8 @@ return new class extends Migration
             $table->integer('user_id');
             $table->integer('prod_id');
             $table->integer('prod_quantity');
+            $table->integer('order_total');
+            $table->integer('status', 10)->default(0);
             $table->timestamps();
         });
     }

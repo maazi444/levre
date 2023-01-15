@@ -1,4 +1,5 @@
 @extends('main_master')
+@section('title', 'Login - Levre')
 @section('main')
 <section class="form__wrapper">
     <div class="form__outer">

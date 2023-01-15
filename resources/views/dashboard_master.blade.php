@@ -14,7 +14,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.cdnfonts.com/css/hk-groteks" rel="stylesheet" />
+    <!-- <link href="https://fonts.cdnfonts.com/css/hk-groteks" rel="stylesheet" crossorigin="anonymous" /> -->
     <!-- font-family: 'HK Grotesk', sans-serif; -->
 
     <!--FONT AWESOME-->

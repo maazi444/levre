@@ -25,7 +25,9 @@
             <div class="table-row">
                 <div class="table-data">{{ $key+1 }}</div>
                 <div class="table-data">{{ $category->name }}</div>
-                <div class="table-data">0</div>
+                <div class="table-data">
+                    {{ $category->category_product_count }}
+                </div>
                 <div class="table-data">
                     @if($category['admin_categories']['name'] == "Public")
                     <span class="category__greenBtn">
@@ -43,7 +45,7 @@
                 </div>
             </div>
             @endforeach
-            {{ $allData->links() }}
+
         </div>
     </div>
 </div>
